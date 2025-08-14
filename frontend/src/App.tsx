@@ -4,8 +4,6 @@ import {type TodoStatusTypes, todoStatusTypes} from './types/TodoStatusTypes'
 import {useEffect, useState} from "react";
 import axios from "axios";
 import type {todoType} from "./types/TodoType.ts";
-
-
 import InputTodo from "./components/InputTodo.tsx";
 
 function App() {
@@ -24,6 +22,7 @@ function App() {
 
   return (
     <div className="App">
+
         {todoStatusTypes.map((status:TodoStatusTypes) => {
             return (
                 <div key={status} className={status.toString()}>

@@ -70,5 +70,8 @@ input{
     .todo-item{
         width: 90%;
     }
-
+    input{
+        width: 70%;
+        margin-bottom: 0.5rem;
+    }
 }
