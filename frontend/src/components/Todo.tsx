@@ -3,7 +3,7 @@ import "../App.css"
 import axios from "axios";
 import type {todoType} from "../types/TodoType.ts";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faForward, faPencil, faTrash} from "@fortawesome/free-solid-svg-icons";
+import {faForward, faTrash} from "@fortawesome/free-solid-svg-icons";
 
 type TodoProps = {
     todo: { description: string; id: string; status: string },
@@ -60,7 +60,7 @@ export default function Todo({todo,fetchTodos}: TodoProps) {
             {todo.description === ""}
             <div className={"todo-item"}>
                 <h2>{todo.description}</h2>
-                <button>Edit <FontAwesomeIcon icon={faPencil} /></button>
+                {/*<button>Edit <FontAwesomeIcon icon={faPencil} /></button>*/}
                 {todo.status!=="DONE" ?
                     <button onClick={() => Advance(todo,fetchTodos)} className={"advance-button"}>Advance <FontAwesomeIcon icon={faForward} /></button>:
                     <button onClick={() => DeleteRequest(todo,fetchTodos)} className={"delete-button"}>Delete <FontAwesomeIcon icon={faTrash} /></button>
