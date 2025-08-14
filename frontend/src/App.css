@@ -1,7 +1,6 @@
 #root {
-  max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1rem;
   text-align: center;
 }
 
@@ -11,13 +10,65 @@
     /*flex-wrap: wrap;*/
     justify-content: flex-start;
 }
+.OPEN > .todo-item{
+    background: rgba(255, 0, 0, 80%);
+}
+.IN_PROGRESS > .todo-item{
+    background: rgba(255, 230, 0, 80%);;
+}
+.DONE > .todo-item{
+    background: rgba(10,255,10, 80%);
+}
+button{
+    margin: 0.2rem;
+}
+.delete-button{
+    background: rgba(255, 0, 0, 100%);
+}
+
 .todo-item{
     border: 0.2rem solid #ccc;
     border-radius: 1rem;
-    padding: 1rem;
-    margin: 1rem;
+    padding: 0.2rem;
+    margin: 0.5rem;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-between;
+    transition: transform 0.4s ease, box-shadow 0.2s;
+}
+
+.todo-item:hover{
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 50%);
+    transform: scale(1.1);
+}
+
+.bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(34, 34, 34, 0.9);
+    color: white;
+    padding: 1rem 0 3rem 0;
+    text-align: center;
+    z-index: 1000;
+}
+input{
+    width: 70%;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 1rem;
+    margin-right: 1rem;
+}
+
+@media (max-width: 650px) {
+    .App{
+        flex-direction: column;
+        margin-bottom: 15rem;
+    }
+    .todo-item{
+        width: 90%;
+    }
+
 }
